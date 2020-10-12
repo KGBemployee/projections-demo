@@ -12,3 +12,6 @@ A very small sample of data is seeded at startup via the `import.sql` file.
 ###Using the app
 There is a full postman collection that shows all the endpoints with demo requests. This is available under `collections`.
 Data is created at start but there are also POST request examples in the postman collection.
+
+###Documentation
+Spring documentation regardin projections can be found here: https://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts.projections
