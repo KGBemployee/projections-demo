@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "d3612e1e-c218-4ae7-8d18-03ccdd56d1de",
+		"name": "Projections-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add service Line",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Some Service Line\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/addServiceLine",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addServiceLine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Open Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"New role 2\",\n    \"serviceLine\": {\n        \"id\": 1,\n        \"name\": \"Some Service Line\"\n    },\n    \"level\": \"Senior\",\n    \"requirement\": \"Java\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/addOpenRole",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addOpenRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Open Roles By Id from Custom Controller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getOpenRoleById/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getOpenRoleById",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service Lines From Custom Controller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getServiceLines",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getServiceLines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open Roles alps profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/profile/openRoles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"profile",
+						"openRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get open role  via direct Repo endpoint with projection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/openRoles/2?projection=openRoleSummary",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"openRoles",
+						"2"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "openRoleSummary"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Open Roles from custom endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/getOpenRoles",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getOpenRoles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get open role  via direct Repo endpoint without projection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/openRoles/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"openRoles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service lines direct repo endpoint without projection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/serviceLines",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"serviceLines"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
